@@ -1,6 +1,5 @@
-
-import { AudioOutlined } from "@ant-design/icons";
-import { Input, Space, Row } from "antd";
+import { AudioOutlined, SearchOutlined } from "@ant-design/icons";
+import { Input, Space, Row, Button, TreeSelect } from "antd";
 const { Search } = Input;
 
 const suffix = (
@@ -12,19 +11,29 @@ const suffix = (
   />
 );
 
-const onSearch = (value) => console.log(value);
+
+
+const onSearch = (value) => {};
 export default function Navbar(second) {
   return (
     <>
-      <Row>
-        <h1 className="text-blue-500 text-lg font-medium">LOGO</h1>
-        <Search
-          placeholder="input search text"
-          enterButton="Search"
-          size="large"
-          suffix={suffix}
-          onSearch={onSearch}
-        />
+      <Row className="h-12 max-w-full shadow-lg flex justify-between  bg-white">
+        <Row className="flex justify-between w-full mx-10 items-center">
+          <h1 className="text-blue-500 font-semibold text-lg">LOGO</h1>
+          <Row>
+            <Input
+              placeholder="хайх утгаа оруулна уу?"
+              style={{ width: 500, height: 33 }}
+            />
+            <Button
+              type="primary"
+              icon={<SearchOutlined className=" text-center" />}
+              className="ml-2 bg-blue-500 text-white text-center "
+            >
+              хайх
+            </Button>
+          </Row>
+        </Row>
       </Row>
     </>
   );

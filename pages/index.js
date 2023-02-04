@@ -3,6 +3,8 @@ import { Inter } from "@next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import { Button } from "antd";
 import Navbar from "@/components/Layout/Navbar";
+import HomeCover from "@/components/home/cover";
+import ProfessionCard from "@/components/profession";
 
 export default function Home() {
   return (
@@ -14,6 +16,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      <div className="mx-20">
+        <HomeCover />
+        <ProfessionCard />
+      </div>
       {/* <Button>Hello World</Button>
       <h1 className="text-3xl font-bold underline text-slate-500">
         Hello world!
