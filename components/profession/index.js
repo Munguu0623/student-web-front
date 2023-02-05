@@ -21,23 +21,59 @@ const data = [
     title: "Уул уурхай ",
     icon: "icon",
   },
+  {
+    title: "Уул уурхай ",
+    icon: "icon",
+  },
+  {
+    title: "Уул уурхай ",
+    icon: "icon",
+  },
+  {
+    title: "Уул уурхай ",
+    icon: "icon",
+  },
+  {
+    title: "Уул уурхай ",
+    icon: "icon",
+  },
+  {
+    title: "Уул уурхай ",
+    icon: "icon",
+  },
+  {
+    title: "Уул уурхай ",
+    icon: "icon",
+  },
+  {
+    title: "Уул уурхай ",
+    icon: "icon",
+  },
 ];
 
 export default function ProfessionCard(second) {
   return (
-    <>
-      <Col className="mt-16 flex justify-center">
+    <div className=" mx-56">
+      <Col className=" flex flex-wrap justify-center">
         <Row className="flex items-center">
           <div className="w-10 h-1 bg-yellow-500 mr-2"></div>
           <h1 className="text-2xl font-normal ">Мэргэжилүүдийн мэдээлэл</h1>
           <div className="w-10 h-1 bg-yellow-500 ml-2"></div>
         </Row>
       </Col>
-      <Row className="mt-16" gutter={16}>
+      <Row className="mt-16 flex justify-between" gutter={[48, 42]}>
         {data.map((el) => {
           return (
-            <Col span={4} className="flex justify-center items-center">
-              <Card className="w-96 h-56   " bordered={false} hoverable>
+            <Col span={4} className="flex justify-center items-center  ">
+              <Card className=" w-96 h-60  relative" bordered={false} hoverable>
+                <div className="bg-white w-full flex justify-end ">
+                  <Image
+                    src="/shape1.png"
+                    width={60}
+                    height={80}
+                    className="absolute opacity-30  "
+                  />
+                </div>
                 <Image
                   src="/Bouncer.svg"
                   className="text-blue-500"
@@ -45,6 +81,7 @@ export default function ProfessionCard(second) {
                   width={110}
                   height={110}
                 />
+
                 <h1 className="text-sm  font-semibold mt-8">{el.title}</h1>
                 <h1 className="  text-sm text-blue-500 ">+20 мэргэжил</h1>
               </Card>
@@ -52,6 +89,6 @@ export default function ProfessionCard(second) {
           );
         })}
       </Row>
-    </>
+    </div>
   );
 }

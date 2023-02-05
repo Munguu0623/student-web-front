@@ -16,14 +16,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="mx-20">
+      <div className="mx-56 mt-20 flex flex-col ">
         <HomeCover />
+      </div>
+      <div className="bg-[#cce6ff]/30 h-screen flex items-center ">
         <ProfessionCard />
       </div>
-      {/* <Button>Hello World</Button>
-      <h1 className="text-3xl font-bold underline text-slate-500">
-        Hello world!
-      </h1> */}
     </>
   );
 }
