@@ -32,19 +32,18 @@ export default function BigSwiper(second) {
           slot="container-start"
           className="parallax-bg"
           style={{
-            "background-image":
-              "url(https://swiperjs.com/demos/images/nature-1.jpg)",
+            "background-image": "url(/123.png)",
           }}
           data-swiper-parallax="-23%"
         ></div>
         <SwiperSlide>
-          <div className="title" data-swiper-parallax="-300">
+          <div className="title mt-32" data-swiper-parallax="-300">
             Slide 1
           </div>
           <div className="subtitle" data-swiper-parallax="-200">
             Subtitle
           </div>
-          <div className="text" data-swiper-parallax="-100">
+          <div className="text" data-swiper-parallax="-200">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
@@ -57,7 +56,7 @@ export default function BigSwiper(second) {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="title" data-swiper-parallax="-300">
+          <div className="title mt-32" data-swiper-parallax="-300">
             Slide 2
           </div>
           <div className="subtitle" data-swiper-parallax="-200">
@@ -76,13 +75,13 @@ export default function BigSwiper(second) {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="title" data-swiper-parallax="-300">
+          <div className="title mt-32" data-swiper-parallax="-300">
             Slide 3
           </div>
           <div className="subtitle" data-swiper-parallax="-200">
             Subtitle
           </div>
-          <div className="text" data-swiper-parallax="-100">
+          <div className="text" data-swiper-parallax="-200">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
