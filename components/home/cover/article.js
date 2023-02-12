@@ -10,7 +10,7 @@ import {
 
 export default function CoverArticle(second) {
   return (
-    <Row className=" flex flex-nowrap">
+    <Row className=" flex ">
       <Row>
         <div className="w-8/12 flex flex-col items-center">
           <div className="w-20 h-20 rounded-lg bg-green-400/20  flex justify-center items-center">
