@@ -1,11 +1,16 @@
 import { Col, Row } from "antd";
 
 import { FaBeer } from "react-icons/fa";
-import { BsBookFill, BsFillCalendar2WeekFill,BsFillEmojiHeartEyesFill, BsFillEnvelopeFill  } from "react-icons/bs";
+import {
+  BsBookFill,
+  BsFillCalendar2WeekFill,
+  BsFillEmojiHeartEyesFill,
+  BsFillEnvelopeFill,
+} from "react-icons/bs";
 
 export default function CoverArticle(second) {
   return (
-    <>
+    <Row className=" flex flex-nowrap">
       <Row>
         <div className="w-8/12 flex flex-col items-center">
           <div className="w-20 h-20 rounded-lg bg-green-400/20  flex justify-center items-center">
@@ -50,6 +55,6 @@ export default function CoverArticle(second) {
           </h1>
         </div>
       </Row>
-    </>
+    </Row>
   );
 }

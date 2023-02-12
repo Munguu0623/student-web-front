@@ -1,5 +1,15 @@
 import { Card, Row, Col, Space } from "antd";
 import Image from "next/image";
+
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
+
+// import required modules
+import { Grid, Pagination } from "swiper";
+
 const data = [
   {
     title: "Мэдээлэл технологи",
@@ -53,7 +63,7 @@ const data = [
 
 export default function ProfessionCard(second) {
   return (
-    <div className=" mx-56">
+    <div className="2xl:mx-56 lg:mx-36 ">
       <Col className=" flex flex-wrap justify-center">
         <Row className="flex items-center">
           <div className="w-10 h-1 bg-yellow-500 mr-2"></div>
@@ -61,10 +71,18 @@ export default function ProfessionCard(second) {
           <div className="w-10 h-1 bg-yellow-500 ml-2"></div>
         </Row>
       </Col>
-      <Row className="mt-16 flex justify-between" gutter={[48, 42]}>
+      <Row
+        className="mt-16 flex justify-between"
+        gutter={{
+          xs: 8,
+          sm: 16,
+          md: 24,
+          lg: 32,
+        }}
+      >
         {data.map((el) => {
           return (
-            <Col span={4} className="flex justify-center items-center  ">
+            <Col span={4} className="flex justify-center items-center my-5  ">
               <Card className=" w-96 h-60  relative" bordered={false} hoverable>
                 <div className="bg-white w-full flex justify-end ">
                   <Image

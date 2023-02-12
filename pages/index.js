@@ -5,6 +5,7 @@ import { Button } from "antd";
 import Navbar from "@/components/Layout/Navbar";
 import HomeCover from "@/components/home/cover";
 import ProfessionCard from "@/components/profession";
+import Consultant from "@/components/consultant";
 
 export default function Home() {
   return (
@@ -16,11 +17,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="mx-56 mt-20 flex flex-col ">
+      <div className="2xl:mx-56 lg:mx-36 mt-20 flex flex-col ">
         <HomeCover />
       </div>
-      <div className="bg-[#cce6ff]/30 h-screen flex items-center ">
+      <div className="bg-[#cce6ff]/30 h-screen flex items-center  ">
         <ProfessionCard />
+      </div>
+      <div className=" h-screen flex items-center  ">
+        <Consultant />
       </div>
     </>
   );
