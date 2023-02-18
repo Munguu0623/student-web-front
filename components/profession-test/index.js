@@ -1,4 +1,5 @@
 import { Col, Row, Card } from "antd";
+import SmallCard from "./card";
 
 export default function ProfessionTest(second) {
   return (
@@ -15,31 +16,11 @@ export default function ProfessionTest(second) {
           </Row>
         </Col>
 
-        <Row className=" h-full w-full flex justify-center mt-20">
-          <div className="w-2/12 mr-4">
-            <div className="h-3/6 w-full flex flex-col justify-between ">
-              <div className=" w-full h-3/6">
-                <Card hoverable className=" h-full "></Card>
-              </div>
-              <div className=" w-full h-[12.8rem]">
-                <Card hoverable className=" h-full"></Card>
-              </div>
-            </div>
-          </div>
-          <div className="w-4/12 h-3/6">
-            <Card hoverable className="h-full"></Card>
-          </div>
-          <div className="w-2/12 ml-4">
-            <div className="h-3/6 w-full flex flex-col justify-between ">
-              <div className=" w-full h-3/6">
-                <Card hoverable className=" h-full "></Card>
-              </div>
-              <div className=" w-full h-[12.8rem]">
-                <Card hoverable className=" h-full"></Card>
-              </div>
-            </div>
-          </div>
-        </Row>
+        <div className=" ">
+          <Row className="w-3/12 mr-4 flex ">
+            <SmallCard />
+          </Row>
+        </div>
       </div>
     </>
   );

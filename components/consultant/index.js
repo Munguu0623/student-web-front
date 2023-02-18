@@ -72,8 +72,12 @@ export default function Consultant(second) {
                       />
                     </span>
                   </div>
-                  <div className="font-medium mb-3">{el.title}</div>
-                  <div className="font-light text-sm ">{el.description}</div>
+                  <div className="font-medium mb-3 leading-none">
+                    {el.title}
+                  </div>
+                  <div className="font-light  text-xs text-justify ">
+                    {el.description}
+                  </div>
                 </Card>
               </Row>
             );
