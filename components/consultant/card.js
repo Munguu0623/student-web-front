@@ -1,3 +1,4 @@
+import { Row } from "antd";
 export default function SmallCard(second) {
   const data = [
     {
@@ -10,20 +11,12 @@ export default function SmallCard(second) {
       subtitle:
         "Мэргэжил сонголтын тест бөглөн та өөрт тохиорох мэргэжилээ олоорой",
     },
-    {
-      title: "Мэргэжил сонголтын тест",
-      subtitle:
-        "Мэргэжил сонголтын тест бөглөн та өөрт тохиорох мэргэжилээ олоорой",
-    },
-    {
-      title: "Мэргэжил сонголтын тест",
-      subtitle:
-        "Мэргэжил сонголтын тест бөглөн та өөрт тохиорох мэргэжилээ олоорой",
-    },
+   
+  
   ];
 
   return (
-    <>
+    <div className="">
       {data.map((e) => {
         return (
           <div className="h-3/6 w-full flex flex-col justify-between mt-10">
@@ -66,6 +59,6 @@ export default function SmallCard(second) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }

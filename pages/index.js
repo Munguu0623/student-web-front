@@ -5,8 +5,8 @@ import { Button } from "antd";
 import Navbar from "@/components/Layout/Navbar";
 import HomeCover from "@/components/home/cover";
 import ProfessionCard from "@/components/profession";
-import ProfessionTest from "@/components/profession-test";
-import Consultant from "@/components/consultant";
+import ProfessionTest from "@/components/consultant";
+import Consultant from "@/components/profession-tests";
 
 export default function Home() {
   return (
