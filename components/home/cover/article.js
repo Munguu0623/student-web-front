@@ -55,6 +55,17 @@ export default function CoverArticle(second) {
           </h1>
         </div>
       </Row>
+      <Row>
+        <div className="w-8/12 sm:flex flex-col items-center hidden lg:visible ">
+          <div className="2xl:w-20 2xl:h-18 w-16 h-16 rounded-lg bg-sky-400/20  flex justify-center items-center">
+            <BsFillCalendar2WeekFill className=" text-xl text-sky-400" />
+          </div>
+          <h1 className="font-semibold 2xl:text-xl text-lg ">Өөрийгөө нээх</h1>
+          <h1 className="text-center 2xl:mt-2 mt-0">
+            Хүсэл сонирхолтой байгаа эсэхээ яаж мэдэх вэ
+          </h1>
+        </div>
+      </Row>
     </div>
   );
 }

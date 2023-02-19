@@ -48,3 +48,8 @@
 .ant-card-meta-title {
   white-space: pre-line;
 }
+
+.ant-layout-header .site-layout-background {
+  padding-left: 0px;
+  padding-right: 0px;
+}
