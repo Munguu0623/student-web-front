@@ -8,8 +8,10 @@ import ProfessionCard from "@/components/profession";
 import ProfessionTest from "@/components/consultant";
 import Consultant from "@/components/profession-tests";
 import University from "@/components/university";
-
-export default function Home() {
+import useFetch from "./hooks/fetchData";
+export default function Home(messages) {
+  // const {loading, error, data} = useFetch({ url: "http://localhost:1337/api" });
+  // console.log(data, "this is data ==============");
   return (
     <Navbar>
       <Head>
@@ -28,7 +30,7 @@ export default function Home() {
       <div className=" h-screen ">
         <Consultant />
       </div>
-      <div className="h-screen  ">
+      <div className="h-screen  mb-20">
         <ProfessionTest />
       </div>
       <div className="h-screen">
@@ -37,3 +39,31 @@ export default function Home() {
     </Navbar>
   );
 }
+
+// export async function getStaticProps() {
+//   const client = new ApolloClient({
+//     uri: "http://localhost:1337/graphql",
+//     cache: new InMemoryCache(),
+//   });
+//   console.log("cleaint ------->");
+//   const { data } = await client.query({
+//     query: gql`
+//       query {
+//         professionCardNames {
+//           data {
+//             id
+//             attributes {
+//               cardTitle
+//             }
+//           }
+//         }
+//       }
+//     `,
+//   });
+//   console.log(data.professionCardNames, "data----->");
+//   return {
+//     props: {
+//       messages: data.professionCardNames,
+//     }, // will be passed to the page component as props
+//   };
+// }
