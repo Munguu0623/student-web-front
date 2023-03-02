@@ -1,21 +1,15 @@
 import { Card, Row, Col, Space } from "antd";
 import Link from "next/link";
-// import {
-//   ApolloClient,
-//   InMemoryCache,
-//   ApolloProvider,
-//   gql,
-// } from "@apollo/client";
+const { Meta } = Card;
+
 import Image from "next/image";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
-// import required modules
-import { Grid, Pagination } from "swiper";
-import useFetch from "@/pages/hooks/fetchData";
-import { useState } from "react";
-import { Josefin_Sans } from "@next/font/google";
+import { gql } from "@apollo/client";
+import sdk from "../../pages/api/graphql";
+import { useEffect, useState } from "react";
 const datas = [
   {
     title: "Мэдээлэл технологи",
@@ -67,17 +61,33 @@ const datas = [
   },
 ];
 
-export default function ProfessionCard({ messages }) {
-  const { loading, error, data } = useFetch(
-    "http://localhost:1337/api/profession-card-names"
-  );
+export default function ProfessionCard() {
+  const [professionNameData, setProfessionNameData] = useState([]);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  // var myObj = JSON.stringify(data);
-  // const myArr = Object.values(myObj);
-  // allData = data.forEach((el) => {
-  //   return el;
-  // });
-  // console.log(myArr);
+  const fetchData = async () => {
+    const result = await sdk.query({
+      query: gql`
+        query {
+          professionCardNames(pagination: { limit: 20 }) {
+            data {
+              attributes {
+                cardTitle
+              }
+            }
+          }
+        }
+      `,
+    });
+    const datas = result.data.professionCardNames.data.map((el) => {
+      return el.attributes.cardTitle;
+    });
+    setProfessionNameData(datas);
+  };
+
+  // console.log(JSON.stringify(professionNameData));
 
   return (
     <div className="2xl:mx-56 lg:mx-36 ">
@@ -97,7 +107,7 @@ export default function ProfessionCard({ messages }) {
           lg: 32,
         }}
       >
-        {datas.map((el) => {
+        {professionNameData.map((el, index) => {
           return (
             <Col span={4} className="flex justify-center items-center my-5  ">
               <Link
@@ -106,9 +116,11 @@ export default function ProfessionCard({ messages }) {
                 }
               >
                 <Card
-                  className=" w-44 h-60  relative"
+                  className=" w-44 h-60  relative "
                   bordered={false}
                   hoverable
+                  key={index}
+                  style={{ wordWrap: "break-word" }}
                 >
                   <div className="bg-white w-full flex justify-end ">
                     <Image
@@ -125,9 +137,13 @@ export default function ProfessionCard({ messages }) {
                     width={110}
                     height={110}
                   />
-
-                  <h1 className="text-sm  font-semibold mt-8">{el.title}</h1>
-                  <h1 className="  text-sm text-blue-500 ">+20 мэргэжил</h1>
+                  {/* <Meta title="12 мэргэжил" description={el} /> */}
+                  <div className="  text-xs mb-2 text-blue-500 ">
+                    +20 мэргэжил
+                  </div>
+                  <div className=" text-xs  font-normal  text-center  ">
+                    {el}
+                  </div>
                 </Card>
               </Link>
             </Col>
@@ -137,3 +153,28 @@ export default function ProfessionCard({ messages }) {
     </div>
   );
 }
+
+// export async function getStaticProps() {
+//   // const sdk = ApolloSdk.getInstance();
+// const result = await sdk.query({
+//   query: gql`
+//     query {
+//       professionCardNames {
+//         data {
+//           id
+//           attributes {
+//             cardTitle
+//           }
+//         }
+//       }
+//     }
+//   `,
+// });
+
+//   // console.log("----- result");
+//   // console.log(result.data.professionCardNames.data);
+
+//   return {
+//     props: { data: result.data.professionCardNames.data },
+//   };
+// }

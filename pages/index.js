@@ -2,16 +2,19 @@ import Head from "next/head";
 import { Inter } from "@next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import { Button } from "antd";
-import Navbar from "@/components/Layout/Navbar";
-import HomeCover from "@/components/home/cover";
-import ProfessionCard from "@/components/profession";
-import ProfessionTest from "@/components/consultant";
-import Consultant from "@/components/profession-tests";
-import University from "@/components/university";
+import Navbar from "../components/Layout/Navbar";
+import HomeCover from "../components/home/cover";
+import ProfessionCard from "../components/profession";
+import ProfessionTest from "../components/consultant";
+import Consultant from "../components/profession-tests";
+import University from "../components/university";
 import useFetch from "./hooks/fetchData";
-export default function Home(messages) {
+import sdk from "./api/graphql";
+import { gql } from "@apollo/client";
+
+export default function Home({ data }) {
   // const {loading, error, data} = useFetch({ url: "http://localhost:1337/api" });
-  // console.log(data, "this is data ==============");
+  // console.log(data[0].id, "this is data ==============");
   return (
     <Navbar>
       <Head>
@@ -39,31 +42,3 @@ export default function Home(messages) {
     </Navbar>
   );
 }
-
-// export async function getStaticProps() {
-//   const client = new ApolloClient({
-//     uri: "http://localhost:1337/graphql",
-//     cache: new InMemoryCache(),
-//   });
-//   console.log("cleaint ------->");
-//   const { data } = await client.query({
-//     query: gql`
-//       query {
-//         professionCardNames {
-//           data {
-//             id
-//             attributes {
-//               cardTitle
-//             }
-//           }
-//         }
-//       }
-//     `,
-//   });
-//   console.log(data.professionCardNames, "data----->");
-//   return {
-//     props: {
-//       messages: data.professionCardNames,
-//     }, // will be passed to the page component as props
-//   };
-// }

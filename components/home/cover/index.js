@@ -1,10 +1,23 @@
 import { Carousel, Row, Col, Card } from "antd";
+import axios from "axios";
 import Image from "next/image";
+import { useEffect } from "react";
 // import Image from "next/image";
 import CoverArticle from "./article";
 import BigSwiper from "./big-swiper";
 
 export default function HomeCover(second) {
+  useEffect(() => {
+    axios
+      .get("/api/profession-card-names")
+      .then((res) => {
+        console.log(res.data, "axios -------------------");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <Col className="">

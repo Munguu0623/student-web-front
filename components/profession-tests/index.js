@@ -72,6 +72,7 @@ export default function ProfessionTest(second) {
                       />
                     </span>
                   </div>
+
                   <div className="font-medium mb-3 leading-none">
                     {el.title}
                   </div>
